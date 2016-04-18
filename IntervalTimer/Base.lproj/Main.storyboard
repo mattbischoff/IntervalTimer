@@ -17,10 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUt-gI-q2r" userLabel="Start Stop Button">
+                                <rect key="frame" x="234" y="430" width="133" height="66"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <state key="normal" title="START"/>
+                                <connections>
+                                    <action selector="startStopButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zah-Mk-32V"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5HH-oJ-jOO" userLabel="Seconds Label">
-                                <rect key="frame" x="286" y="285" width="29" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="256" y="255" width="89" height="90"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="75"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -28,10 +35,13 @@
                         <constraints>
                             <constraint firstItem="5HH-oJ-jOO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Q0d-2R-Dsf"/>
                             <constraint firstItem="5HH-oJ-jOO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="V2X-FV-rcD"/>
+                            <constraint firstItem="bUt-gI-q2r" firstAttribute="centerX" secondItem="5HH-oJ-jOO" secondAttribute="centerX" id="jTb-9P-wqI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bUt-gI-q2r" secondAttribute="bottom" constant="104" id="lta-SV-i62"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="secondsLabel" destination="5HH-oJ-jOO" id="AQa-i0-UBe"/>
+                        <outlet property="startStopButton" destination="bUt-gI-q2r" id="3Zg-IB-ANT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
