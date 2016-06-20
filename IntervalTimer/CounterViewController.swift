@@ -14,25 +14,25 @@ class CounterViewController: UIViewController {
     @IBOutlet weak var startStopButton: UIButton!
     
     var secondsRemaining = 20
-    var timer: NSTimer?
+    var timer: Timer?
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         updateSecondsLabel()
     }
     
-    @IBAction func startStopButtonTapped(sender: AnyObject) {
+    @IBAction func startStopButtonTapped(_ sender: AnyObject) {
         if timer != nil {
             // stop
             timer?.invalidate()
             timer = nil
-            startStopButton.setTitle("START", forState: .Normal)
+            startStopButton.setTitle("START", for: UIControlState())
         }
         else {
             // start
-            startStopButton.setTitle("STOP", forState: .Normal)
-            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(decrementCounter), userInfo: nil, repeats: true)
+            startStopButton.setTitle("STOP", for: UIControlState())
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(decrementCounter), userInfo: nil, repeats: true)
         }
     }
     
